@@ -1,5 +1,6 @@
 package com.example.mp5;
 
+import android.media.Image;
 import android.view.View;
 import android.widget.Button;
 
@@ -10,7 +11,7 @@ public class Cell {
     public Button button;
     public int posX;
     public int posY;
-
+    public String sprite;
     public BasePiece piece = null;
 
     Cell(Board setBoard, int setPosX, int setPosY) {
