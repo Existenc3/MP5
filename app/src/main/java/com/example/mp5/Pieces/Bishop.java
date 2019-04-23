@@ -4,6 +4,6 @@ import com.example.mp5.Cell;
 
 public class Bishop {
     public Bishop (Cell myCell) {
-        myCell.sprite = "B";
+        myCell.setPiece("B");
     }
 }

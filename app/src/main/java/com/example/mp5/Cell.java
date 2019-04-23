@@ -23,4 +23,11 @@ public class Cell {
     public void setButton(Button setButton) {
         this.button = setButton;
     }
+    public String getPiece() {
+        return this.sprite;
+    }
+    public void setPiece(String toSet) {
+        this.sprite = toSet;
+        this.button.setText(toSet);
+    }
 }

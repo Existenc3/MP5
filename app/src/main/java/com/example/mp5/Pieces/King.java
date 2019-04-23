@@ -8,6 +8,6 @@ import com.example.mp5.Cell;
 
 public class King {
     public King(Cell myCell) {
-        myCell.sprite = "K";
+        myCell.setPiece("K");
     }
 }
