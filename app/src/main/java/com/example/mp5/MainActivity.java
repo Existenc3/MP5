@@ -12,6 +12,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public Board board;
+
     String[] array_characters = {
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y",
@@ -25,25 +27,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createBoard();
         setUpList();
-        GridView gridView = (GridView) findViewById(R.id.gridView);
-        GridViewAdapter adapter = new GridViewAdapter(lstSource, this);
+        GridView gridView = findViewById(R.id.gridView);
+        GridViewAdapter adapter = new GridViewAdapter(board, lstSource, this);
         gridView.setAdapter(adapter);
 
 
         /*
         TextView myFirst =  (TextView) findViewById((R.id.firstText));
-        myFirst.setText("Fuck Yeah!");
-        createBoard(); */
+        myFirst.setText("Fuck Yeah!"); */
     }
 
     private void setUpList() {
+        for (int y = 7; y >= 0; y--) {
+            for (int x = 0; x < 8; x++) {
+                lstSource.add(x + ", " + y);
+            }
+        }
+        /*
         for(String item:array_characters) {
             lstSource.add(item);
-        }
+        } */
     }
 
     private void createBoard() {
-        LinearLayout layout = new LinearLayout(this);
+        board = new Board();
     }
 }
